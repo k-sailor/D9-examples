@@ -8,7 +8,7 @@ use Drupal\Core\Controller\ControllerBase;
  *
  * This is our hero controller
  */
-class HeroController{
+class HeroController extends ControllerBase {
   public function heroList(){
     $heroes = [
       ['name' => 'Hulk'],
@@ -26,7 +26,7 @@ class HeroController{
 
     return [
       '#type' => 'markup',
-      '#markup' => '<ol>' . $ourHeroes . '</ol>',
+      '#markup' => '<ol>' . t($ourHeroes) . '</ol>',
     ];
   }
 }
