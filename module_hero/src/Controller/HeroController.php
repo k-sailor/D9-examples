@@ -18,15 +18,10 @@ class HeroController extends ControllerBase {
       ['name' => 'Wolverine'],
     ];
 
-    $ourHeroes = '';
-
-    foreach ($heroes as $hero){
-      $ourHeroes .= '<li>' . $hero['name'] . '</li>';
-    }
-
     return [
-      '#type' => 'markup',
-      '#markup' => '<ol>' . t($ourHeroes) . '</ol>',
+      '#theme' => 'hero_list',
+      '#items' => $heroes,
+      '#title' => $this->t('Out wonderful heroes list'),
     ];
   }
 }
