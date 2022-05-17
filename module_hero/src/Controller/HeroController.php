@@ -8,8 +8,10 @@ use Drupal\Core\Controller\ControllerBase;
  *
  * This is our hero controller
  */
-class HeroController extends ControllerBase {
-  public function heroList(){
+class HeroController extends ControllerBase
+{
+  public function heroList()
+  {
     $heroes = [
       ['name' => 'Hulk'],
       ['name' => 'Super Man'],
