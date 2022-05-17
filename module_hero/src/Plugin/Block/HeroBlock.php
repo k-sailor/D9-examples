@@ -53,5 +53,7 @@ class HeroBlock extends BlockBase
         ],
       ];
     }
+
+    return $table;
   }
 }
