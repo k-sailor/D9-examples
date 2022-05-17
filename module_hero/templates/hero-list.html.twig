@@ -1,9 +1,9 @@
 {{ attach_library('module_hero/hero-style') }}
 
-<h4 class="animated bounce">{{title}}</h4>
+<h4>{{title}}</h4>
 <ol>
   {% for item in items %}
-  <li>{{ item.name }}</li>
+  <li class="animated {{ random(['bounce', 'flash', 'rubberBand', 'shake', 'jello', 'tada', 'bounceIn', 'rollin']) }}">{{ item.name }}</li>
   {% endfor %}
 </ol>
 <strong>from module's hero-list.html.twig</strong>
