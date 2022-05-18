@@ -22,7 +22,7 @@ class HeroConfigForm extends ConfigFormBase
   /**
    * {@inheritdoc}
    */
-  public function buildForm(array $form, $form_state)
+  public function buildForm(array $form, FormStateInterface $form_state)
   {
 
     $config = $this->config('module_hero.settings');
@@ -30,7 +30,7 @@ class HeroConfigForm extends ConfigFormBase
     $form['hero_list_title'] = [
       '#type' => 'textfield',
       '#title' => $this->t('Hero list title'),
-      '#default_value' => $config->get('hero_list_title'),
+      '#default_value' => $config->get('hero_list_title')
     ];
     return parent::buildForm($form, $form_state);
   }
