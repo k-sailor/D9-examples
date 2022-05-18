@@ -18,7 +18,9 @@ function module_hero_theme($existing, $type, $theme, $path)
   ];
 }
 
-
+/**
+ * Implements hook_form_alter()
+ */
 function module_hero_form_alter(&$form, \Drupal\Core\Form\FormStateInterface $form_state, $form_id)
 {
 
