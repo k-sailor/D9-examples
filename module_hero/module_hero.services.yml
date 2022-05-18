@@ -1,3 +1,4 @@
 services:
   module_hero.hero_articles:
     class: Drupal\module_hero\HeroArticleService
+    arguments: ['@entity.query', '@entity.manager']
