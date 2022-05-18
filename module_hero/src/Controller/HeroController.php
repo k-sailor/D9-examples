@@ -31,7 +31,7 @@ class HeroController extends ControllerBase
   public function heroList()
   {
 
-    kint($this->configFactory->get('module_hero.settings')->get('hero_list_title')); die();
+    // kint($this->configFactory->get('module_hero.settings')->get('hero_list_title')); die();
 
     $heroes = [
       ['name' => 'Hulk'],
@@ -44,7 +44,8 @@ class HeroController extends ControllerBase
     return [
       '#theme' => 'hero_list',
       '#items' => $heroes,
-      '#title' => $this->t('Out wonderful heroes list'),
+      //'#title' => $this->t('Out wonderful heroes list'),
+      '#title' => $this->configFactory->get('module_hero.settings')->get('hero_list_title')
     ];
   }
 }
