@@ -5,3 +5,11 @@ module_hero.herolist:
     _title: 'Our super heroes list'
   requirements:
     _permission: 'access content'
+
+module_hero.heroform:
+  path: '/hero-form'
+  defaults:
+    _form: '\Drupal\module_hero\Form\HeroForm'
+    _title: 'Who will win'
+  requirements:
+    _permission: 'access content'
