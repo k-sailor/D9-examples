@@ -47,6 +47,15 @@ class HeroForm extends FormBase
   /**
    * {@inheritdoc}
    */
+  public function validateForm(array &$form, FormStateInterface $form_state){
+    if(empty($form_state->getValue('rival_1'))){
+      $form_state->setErrorByName('rival_1', $this->t('Please specify rival one.'));
+    }
+  }
+
+  /**
+   * {@inheritdoc}
+   */
   public function submitForm(array &$form, FormStateInterface $form_state)
   {
     $winner = rand(1, 2);
