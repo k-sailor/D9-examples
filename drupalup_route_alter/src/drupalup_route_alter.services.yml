@@ -1,0 +1,5 @@
+services:
+  drupalup_route_alter.drupalup_route_subscriber:
+    class: Drupal\drupalup_route_alter\Routing\DrupalupRouteSubscriber
+    tabs:
+      - { name: event_subscriber }
