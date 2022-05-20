@@ -1,0 +1,4 @@
+name: Menu alter example module
+description: Path alter test module
+type: module
+core: 8.x
