@@ -40,3 +40,17 @@ function _module_hero_article_validate(&$form, $form_state)
     $form_state->setErrorByName('title', t('Title should not be numeric'));
   }
 }
+
+/**
+ * Implements hook_entity_presave()
+ */
+function module_hero_entity_presave(\Drupal\Core\Entity\EntityInterface $entity)
+{
+  if ($entity->bundle() == 'article') {
+
+    $messenger = \Drupal::messenger();
+    $messenger->addMessage('We are resaving our article with name: ' . $entity->get('title')->getValue()[0]['value'], $messenger::TYPE_STATUS);
+    //kint($entity->bundle());
+    //die();
+  }
+}
