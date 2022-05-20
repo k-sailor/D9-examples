@@ -17,7 +17,8 @@ class HeroController extends ControllerBase
   protected $configFactory;
   protected $currentUser;
 
-  public static function create(ContainerInterface $container){
+  public static function create(ContainerInterface $container)
+  {
     return new static(
       //$container->get('module_hero.hero_articles'),
       $container->get('config.factory'),
@@ -25,7 +26,8 @@ class HeroController extends ControllerBase
     );
   }
 
-  public function __construct(/*HeroArticleService $articleHeroService,*/ ConfigFactory $configFactory, $currentUser){
+  public function __construct(/*HeroArticleService $articleHeroService,*/ConfigFactory $configFactory, $currentUser)
+  {
     //$this->articleHeroService = $articleHeroService;
     $this->configFactory = $configFactory;
     $this->currentUser = $currentUser;
@@ -46,21 +48,19 @@ class HeroController extends ControllerBase
       ['name' => 'Wolverine'],
     ];
 
-    if($this->currentUser->hasPermission('can see hero list')){
+    if ($this->currentUser->hasPermission('can see hero list')) {
       return [
         '#theme' => 'hero_list',
         '#items' => $heroes,
         //'#title' => $this->t('Out wonderful heroes list'),
         '#title' => $this->configFactory->get('module_hero.settings')->get('hero_list_title')
       ];
-    }
-    else{
+    } else {
       return [
         '#theme' => 'hero_list',
         '#items' => [],
         '#title' => $this->configFactory->get('module_hero.settings')->get('hero_list_title')
       ];
     }
-    
   }
 }
